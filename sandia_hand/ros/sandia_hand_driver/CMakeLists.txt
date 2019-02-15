@@ -35,6 +35,8 @@ add_library(sandia_hand
   common/param.cpp
   common/loose_palm.cpp)
 target_link_libraries(sandia_hand ${catkin_LIBRARIES})
+add_dependencies(sandia_hand ${catkin_EXPORTED_TARGETS})
+
 
 #cli
 add_executable(sandia_hand_cli cli/sandia_hand_cli.cpp)
