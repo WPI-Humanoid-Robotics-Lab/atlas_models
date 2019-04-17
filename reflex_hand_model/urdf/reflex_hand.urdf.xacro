@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="reflex_hand">
+
+    <xacro:include filename="$(find reflex_hand_model)/urdf/03-hand.urdf.xacro" />
+    <xacro:base_color />
+    <xacro:swivel_color />
+    <xacro:proximal_color />
+    <xacro:distal_color />
+    <xacro:flex_color />
+    <xacro:pad_color />
+
+    <link name="world"/>
+
+
+    <xacro:reflex_hand_model prefix="l_" parent="world">
+        <origin rpy="3.14159 3.14159 0" xyz="-0.00125 -0.5 0.01"/>
+    </xacro:reflex_hand_model>
+
+    <xacro:reflex_hand_model prefix="r_" parent="world">
+        <origin rpy="3.14159 0 0" xyz="-0.00125 0.5 0.01"/>
+    </xacro:reflex_hand_model>
+
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/reflex_hands</robotNamespace>
+            <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+            <legacyModeNS>true</legacyModeNS>
+        </plugin>
+    </gazebo>
+
+
+</robot>

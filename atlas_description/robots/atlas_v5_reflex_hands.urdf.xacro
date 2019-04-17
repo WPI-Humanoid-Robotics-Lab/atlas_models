@@ -1,0 +1,29 @@
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="atlas">
+
+    <xacro:include filename="$(find atlas_description)/urdf/atlas_v5_simple_shapes.urdf" />
+    <xacro:include filename="$(find reflex_hand_model)/urdf/03-hand.urdf.xacro" />
+    <xacro:base_color />
+    <xacro:swivel_color />
+    <xacro:proximal_color />
+    <xacro:distal_color />
+    <xacro:flex_color />
+    <xacro:pad_color />
+
+
+    <xacro:reflex_hand_model prefix="l_" parent="l_hand">
+        <origin rpy="0 1.57295 -1.57295" xyz="-0.00125 -0.1 0.0"/>
+    </xacro:reflex_hand_model>
+
+    <xacro:reflex_hand_model prefix="r_" parent="r_hand">
+        <origin rpy="1.57295 1.57295 0" xyz="-0.00125 -0.1 0.0"/>
+    </xacro:reflex_hand_model>
+
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/reflex_hands</robotNamespace>
+        </plugin>
+    </gazebo>
+    <xacro:include filename="$(find atlas_description)/urdf/atlas_v5.gazebo" />
+    <xacro:include filename="$(find atlas_description)/urdf/atlas_v5.transmission" />
+    <xacro:include filename="$(find multisense_sl_description)/urdf/multisense_sl_v4.urdf" />
+</robot>

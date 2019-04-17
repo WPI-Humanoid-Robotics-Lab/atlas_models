@@ -1,0 +1,119 @@
+reflex_hands:
+  hands_joint_state_controller:
+    type: "joint_state_controller/JointStateController"
+    publish_rate: 1000
+    
+  left_hand_controller:
+    type: "position_controllers/JointGroupPositionController"
+    joints: 
+      - l_finger_1_1_to_finger_1_2
+      - l_finger_2_1_to_finger_2_2
+      - l_finger_3_1_to_finger_3_2
+      - l_palm_to_finger_1_1
+      - l_palm_to_finger_2_1
+      - l_palm_to_finger_3_1
+      - l_finger_1_2_to_finger_1_3
+      - l_finger_2_2_to_finger_2_3
+      - l_finger_3_2_to_finger_3_3
+    l_finger_1_1_to_finger_1_2:
+      pid:
+        p: 100.0
+        i: 10.0
+        d: 1.0
+    l_finger_2_1_to_finger_2_2:
+      pid:
+        p: 100.0
+        i: 10.0
+        d: 1.0
+    l_finger_3_1_to_finger_3_2:
+      pid:
+        p: 100.0
+        i: 10.0
+        d: 1.0
+    l_palm_to_finger_1_1:
+      pid:
+        p: 100.0
+        i: 10.0
+        d: 1.0
+    l_palm_to_finger_2_1:
+      pid:
+        p: 100.0
+        i: 10.0
+        d: 1.0
+    l_palm_to_finger_3_1:
+      pid:
+        p: 100.0
+        i: 10.0
+        d: 1.0
+    l_finger_1_2_to_finger_1_3:
+      pid:
+        p: 100.0
+        i: 10.0
+        d: 1.0
+    l_finger_2_2_to_finger_2_3:
+      pid:
+        p: 100.0
+        i: 10.0
+        d: 1.0
+    l_finger_3_2_to_finger_3_3:
+      pid:
+        p: 100.0
+        i: 10.0
+        d: 1.0
+  right_hand_controller:
+    type: "position_controllers/JointGroupPositionController"
+    joints: 
+      - r_finger_1_1_to_finger_1_2
+      - r_finger_2_1_to_finger_2_2
+      - r_finger_3_1_to_finger_3_2
+      - r_palm_to_finger_1_1
+      - r_palm_to_finger_2_1
+      - r_palm_to_finger_3_1
+      - r_finger_1_2_to_finger_1_3
+      - r_finger_2_2_to_finger_2_3
+      - r_finger_3_2_to_finger_3_3
+    r_finger_1_1_to_finger_1_2:
+      pid: 
+        p: 100.0
+        i: 10.0
+        d: 1.0
+    r_finger_2_1_to_finger_2_2:
+      pid: 
+        p: 100.0
+        i: 10.0
+        d: 1.0
+    r_finger_3_1_to_finger_3_2:
+      pid: 
+        p: 100.0
+        i: 10.0
+        d: 1.0
+    r_palm_to_finger_1_1:
+      pid: 
+        p: 100.0
+        i: 10.0
+        d: 1.0
+    r_palm_to_finger_2_1:
+      pid: 
+        p: 100.0
+        i: 10.0
+        d: 1.0
+    r_palm_to_finger_3_1:
+      pid: 
+        p: 100.0
+        i: 10.0
+        d: 1.0
+    r_finger_1_2_to_finger_1_3:
+      pid: 
+        p: 100.0
+        i: 10.0
+        d: 1.0
+    r_finger_2_2_to_finger_2_3:
+      pid: 
+        p: 100.0
+        i: 10.0
+        d: 1.0
+    r_finger_3_2_to_finger_3_3:
+      pid: 
+        p: 100.0
+        i: 10.0
+        d: 1.0
